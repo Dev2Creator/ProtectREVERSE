@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Evidence-first software intelligence workbench for authorized projects"
 requires-python = ">=3.11"
 license = { text = "Custom proprietary source-available EULA" }
-authors = [{ name = "Aneek Mukherjee (Dev2Creator)" }]
+authors = [{ name = "Anika Mukherjee (Dev2Creator)", email = "cuteypieanika@gmail.com" }]
 dependencies = []
 
 [project.scripts]

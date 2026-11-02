@@ -1,6 +1,6 @@
 # ProtectREVERSE — End User Licence Agreement (source-available)
 
-Copyright © 2026 Aneek Mukherjee (Dev2Creator). All rights reserved.
+Copyright © 2026 Anika Mukherjee (Dev2Creator). All rights reserved.
 
 This licence governs the ProtectREVERSE software, its documentation and any reports it generates.
 
@@ -41,4 +41,4 @@ Dependencies, advisory data and referenced projects remain under their own licen
 
 ## 7. Contact
 
-Licence requests: open an issue at https://github.com/Dev2Creator/ProtectREVERSE or contact the author through that account.
+Licence requests: open an issue at https://github.com/Dev2Creator/ProtectREVERSE or write to cuteypieanika@gmail.com.

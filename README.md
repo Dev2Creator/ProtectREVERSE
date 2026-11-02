@@ -49,4 +49,4 @@ Custom proprietary, source-available EULA: see [LICENSE-EULA.md](LICENSE-EULA.md
 
 ## Author
 
-Aneek Mukherjee (Dev2Creator).
+Anika Mukherjee (Dev2Creator). Contact: cuteypieanika@gmail.com.
