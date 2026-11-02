@@ -1,0 +1,16 @@
+[project]
+name = "protectreverse"
+version = "0.1.0"
+description = "Evidence-first software intelligence workbench for authorized projects"
+requires-python = ">=3.11"
+license = { text = "Custom proprietary source-available EULA" }
+authors = [{ name = "Aneek Mukherjee (Dev2Creator)" }]
+dependencies = []
+
+[project.scripts]
+protectreverse = "protectreverse.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["fixtures", "node_modules", ".venv"]
+addopts = "-q"
