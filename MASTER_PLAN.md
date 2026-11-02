@@ -196,6 +196,8 @@ Design constraints: no fabricated numbers, honest empty states, no decorative ch
 
 Sequenced so that each milestone produces something verifiable and nothing downstream is built on a guess.
 
+The browser-level visual, DOM, CSS and asset engine is specified separately in [VISUAL_ENGINE_PLAN.md](VISUAL_ENGINE_PLAN.md) (milestones V0–V8); it slots into R5 and feeds R7, R9 and R11.
+
 ### R0 — Foundations ✅ complete
 Evidence model v1, security guards, CLI, exports, 43 tests.
 
