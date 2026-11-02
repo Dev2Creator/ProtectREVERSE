@@ -1,6 +1,8 @@
 # Implementation Plan — ProtectREVERSE
 
-**Version:** 0.1.1 (plan revision after Phase 1 stabilisation)
+**Version:** 0.1.1 (superseded — see [MASTER_PLAN.md](MASTER_PLAN.md))
+
+> **Superseded.** This plan covered Milestones 0–8 of a static analysis tool. The corrected product vision (multi-surface investigation, reverse engineering, blueprint compilation, workspace application) is documented in [MASTER_PLAN.md](MASTER_PLAN.md). The milestone history below stays for the record; the honest "what works today" table is still accurate.
 **Status:** Milestone 0 and Milestone 1 complete and tested. Everything below M1 is planned, not built.
 **Rule of this document:** a milestone is "done" only when its tests run green and its docs are updated. No milestone is claimed done because code exists.
 

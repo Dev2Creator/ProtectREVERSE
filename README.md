@@ -4,7 +4,7 @@
 
 Evidence-first software intelligence for projects you are authorised to inspect. Static analysis, architecture mapping and defensive security review, running locally with no execution of the code it examines.
 
-**Status: v0.1.1 — Milestone 0 and 1 complete (43 tests passing). Everything else is planned, not built.** The honest inventory lives in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md); read that before assuming a feature exists.
+**Status: v0.1.1 — local project intelligence complete (43 tests passing).** The intended product is much larger: multi-surface investigation, reverse engineering, blueprint compilation and a workspace application. The revised architecture, gap analysis and roadmap are in [MASTER_PLAN.md](MASTER_PLAN.md); the historical milestone record is in [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
 
 ## What works today
 
