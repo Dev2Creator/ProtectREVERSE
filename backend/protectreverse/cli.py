@@ -163,6 +163,52 @@ def cmd_version(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_visual(args: argparse.Namespace) -> int:
+    from .visual.pipeline import analyze_local_site, analyze_markup, write_outputs
+
+    path = Path(args.path)
+    try:
+        if path.is_dir():
+            ir = analyze_local_site(path, entry=args.entry)
+        elif path.is_file():
+            ir = analyze_markup(path.read_text(encoding="utf-8", errors="replace"), url=path.name)
+        else:
+            _print(f"not found: {path}")
+            return 2
+    except (ValueError, OSError) as exc:
+        _print(f"refused: {exc}")
+        return 2
+
+    out_dir = Path(args.out or REPORT_DIR)
+    files = write_outputs(ir, out_dir)
+
+    if args.json_summary:
+        _print(json.dumps({
+            "page": ir.pages[0].url,
+            "nodes": ir.node_total,
+            "rules": len(ir.rules),
+            "tokens": len(ir.tokens),
+            "components": len(ir.components),
+            "assets": len(ir.assets),
+            "breakpoints": len(ir.breakpoints),
+            "warnings": ir.warnings,
+            "files": {key: str(value) for key, value in files.items()},
+        }, indent=2))
+        return 0
+
+    _print(f"visual reconstruction of {path}")
+    _print(
+        f"nodes {ir.node_total} · rules {len(ir.rules)} · tokens {len(ir.tokens)} · "
+        f"components {len(ir.components)} · assets {len(ir.assets)} · "
+        f"breakpoints {len(ir.breakpoints)}"
+    )
+    for warning in ir.warnings:
+        _print(f"warning: {warning}")
+    for key, file in files.items():
+        _print(f"{key:10} {file}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="protectreverse",
@@ -209,6 +255,16 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--port", type=int, default=8787)
     srv.add_argument("--out", help="report directory to serve")
     srv.set_defaults(func=cmd_serve)
+
+    vis = sub.add_parser(
+        "visual",
+        help="reconstruct DOM, CSS tokens, components and assets from markup",
+    )
+    vis.add_argument("path", help="site directory or single HTML file")
+    vis.add_argument("--entry", default="index.html", help="entry file inside the site directory")
+    vis.add_argument("--out", help="output directory (default: ~/.protectreverse/reports)")
+    vis.add_argument("--json-summary", action="store_true", help="machine-readable summary on stdout")
+    vis.set_defaults(func=cmd_visual)
 
     ver = sub.add_parser("version", help="print version and licence summary")
     ver.set_defaults(func=cmd_version)

@@ -21,6 +21,10 @@ Evidence-first software intelligence for projects you are authorised to inspect.
 - AGENT.md generator in four modes, keeping facts, inferences and proposals apart.
 - Reports as Markdown, JSON and a self-contained HTML page with filters.
 - Local report server on 127.0.0.1.
+- **Visual reconstruction** (offline): DOM tree with stable selectors, CSS rules
+  with specificity, design tokens, responsive breakpoints, repeated-component
+  clustering, asset inventory with licence status, and deterministic HTML/CSS
+  regeneration — `protectreverse visual <site-dir>`.
 
 ## What does not exist yet
 
